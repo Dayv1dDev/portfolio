@@ -1,11 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro'
+import Badge from '../components/Badge.astro';
+import Button from '../components/Button.astro';
+import SocialLinks from '../components/SocialLinks.astro'
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
+import EmailIcon from '../components/icons/EmailIcon.astro'
 ---
 
-<Layout title="Dayv1dev's Portfolio">
+<Layout title="David Moreno Cámara | Web Developer">
 	<main>
-		<Hero />
+		<section class="w-full mx-auto lg: py-40">
+			<h1 class="text-4xl font-bold">
+				Hello! I am David Moreno Cámara <Badge>Available to work</Badge>
+			</h1>
+			<h2>
+				and I enjoy Web Design & Development as Frontend Developer from Balearic Islands, Spain.
+			</h2>
+			<div class="flex flex-row">
+				<Button href=''>Download CV</Button>
+				<SocialLinks link="">
+					<GithubIcon class="w-6 h-6" />
+				</SocialLinks>
+				<SocialLinks link="https://www.linkedin.com/in/Dayv1d">
+					<LinkedInIcon class="w-6 h-6" />
+				</SocialLinks>
+				<SocialLinks link="mailto:davidmorecam@gmail.com">
+					<EmailIcon />
+					davidmorecam@gmail.com
+				</SocialLinks>
+			</div>
+			<!-- <div class="mb-6 justify-end">
+				<img class="w-8" src="../icons/arrowdown.svg" alt="">
+			</div> -->
+		</section>
+		
+		<section>
+			About
+		</section>
 	</main>
 </Layout>
 
