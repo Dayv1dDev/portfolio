@@ -1,8 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 import Section from '../components/Section.astro'
-import Badge from '../components/Badge.astro';
-import Button from '../components/Button.astro';
+import Projects from '../components/Projects.astro'
+import Badge from '../components/Badge.astro'
+import Button from '../components/Button.astro'
 import SocialLinks from '../components/SocialLinks.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
@@ -22,10 +23,10 @@ import EmailIcon from '../components/icons/EmailIcon.astro'
 				David Moreno Cámara <a class="flex justify-center items-center ml-2 mt-1.5" href="https://www.linkedin.com/in/Dayv1d" rel="noopener" target="_blank"><Badge>Available to work</Badge></a>
 			</h1>
 			<h2 class="lg:text-xl md:text-lg sm:text-base text-sm text-pretty max-w-2xl mb-5">
-				I work as <span class="text-indigo-400">Front-end Developer</span>, <span class="text-purple-400">Programmer</span> and <span class=" text-blue-400 ">Web Designer</span>. From Balearic Islands, Spain. With the <strong>enthusiasm</strong> to reach new projects and challenges.
+				I work as <span class="text-blue-400">Front-end Developer</span>, <span class="text-indigo-400">Programmer</span> and <span class="text-purple-300">Web Designer</span>. From Balearic Islands, Spain. With the <strong>enthusiasm</strong> to reach new projects and challenges.
 			</h2>
 			<div class="flex flex-row flex-wrap md:gap-x-4 gap-x-3">
-				<Button class="md:mr-1 mr-3 md:text-sm text-xs" href="">Download CV</Button>
+				<Button class="md:mr-1 mr-0 md:text-sm text-xs" href="">Download CV</Button>
 				<SocialLinks link="https://github.com/Dayv1dDev">
 					<GithubIcon class="md:size-5 size-4" />
 				</SocialLinks>
@@ -37,13 +38,14 @@ import EmailIcon from '../components/icons/EmailIcon.astro'
 					link="mailto:davidmorecam@gmail.com"
 				>
 					<EmailIcon class="md:size-5 size-4" />
-					davidmorecam@gmail.com
+					Contact me
 				</SocialLinks>
 			</div>
 		</Section>
 		
-		<Section id="projects">
-			<h1 class="text-2xl font-semibold">Projects</h1>
+		<Section id="projects" class="mb-12">
+			<h2 class="text-2xl font-semibold mb-4">Projects</h2>
+			<Projects />
 		</Section>
 	</main>
 </Layout>
