@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro'
 import Badge from '../components/Badge.astro';
 import Button from '../components/Button.astro';
 import SocialLinks from '../components/SocialLinks.astro'
@@ -8,36 +9,42 @@ import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
 import EmailIcon from '../components/icons/EmailIcon.astro'
 ---
 
-<Layout title="David Moreno Cámara | Web Developer">
-	<main>
-		<section class="w-full mx-auto lg: py-40">
-			<h1 class="text-4xl font-bold">
-				Hello! I am David Moreno Cámara <Badge>Available to work</Badge>
+<Layout 
+	title="David Moreno Cámara - Web Developer and Programmer"
+	description="Web Developer. Very responsible, especialized in making solutions and creating unique websites."
+>
+	<main class="px-2">
+		<Section class="pt-40 pb-52">
+			<h1 class="md:text-xl text-lg font-bold">
+				Hello! I am
 			</h1>
-			<h2>
-				and I enjoy Web Design & Development as Frontend Developer from Balearic Islands, Spain.
+			<h1 class="flex flex-row pb-3 md:text-4xl text-2xl font-bold gap-x-2">
+				David Moreno Cámara <a class="flex justify-center items-center ml-2 mt-1.5" href="https://www.linkedin.com/in/Dayv1d" rel="noopener" target="_blank"><Badge>Available to work</Badge></a>
+			</h1>
+			<h2 class="lg:text-xl md:text-lg sm:text-base text-sm text-pretty max-w-2xl mb-5">
+				I work as <span class="text-indigo-400">Front-end Developer</span>, <span class="text-purple-400">Programmer</span> and <span class=" text-blue-400 ">Web Designer</span>. From Balearic Islands, Spain. With the <strong>enthusiasm</strong> to reach new projects and challenges.
 			</h2>
-			<div class="flex flex-row">
-				<Button href=''>Download CV</Button>
-				<SocialLinks link="">
-					<GithubIcon class="w-6 h-6" />
+			<div class="flex flex-row flex-wrap md:gap-x-4 gap-x-3">
+				<Button class="md:mr-1 mr-3 md:text-sm text-xs" href="">Download CV</Button>
+				<SocialLinks link="https://github.com/Dayv1dDev">
+					<GithubIcon class="md:size-5 size-4" />
 				</SocialLinks>
 				<SocialLinks link="https://www.linkedin.com/in/Dayv1d">
-					<LinkedInIcon class="w-6 h-6" />
+					<LinkedInIcon class="md:size-5 size-4" />
 				</SocialLinks>
-				<SocialLinks link="mailto:davidmorecam@gmail.com">
-					<EmailIcon />
+				<SocialLinks 
+					class="flex flex-row gap-x-1 md:text-sm text-xs" 
+					link="mailto:davidmorecam@gmail.com"
+				>
+					<EmailIcon class="md:size-5 size-4" />
 					davidmorecam@gmail.com
 				</SocialLinks>
 			</div>
-			<!-- <div class="mb-6 justify-end">
-				<img class="w-8" src="../icons/arrowdown.svg" alt="">
-			</div> -->
-		</section>
+		</Section>
 		
-		<section>
-			About
-		</section>
+		<Section id="projects">
+			<h1 class="text-2xl font-semibold">Projects</h1>
+		</Section>
 	</main>
 </Layout>
 
