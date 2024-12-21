@@ -1,0 +1,58 @@
+<header id="main-header" class="flex items-center justify-center py-5 w-full mx-auto md:w-[900px]">
+    <nav class="flex items-center justify-center text-sm md:text-base font-medium w-96 md:w-auto py-2 px-5 rounded-md bg-gradient-to-br from-purple-600/90 to-blue-500/90">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About <span class="sm:inline hidden">me</span></a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div 
+        id="backdrop-menu" 
+        class={`
+            absolute bg-white/90 backdrop-blur-lg rounded
+            translate-x-[var(--left)] translate-y-[var(--top)]
+            left-0 top-0
+            w-[var(--width)] h-[var(--height)]
+            transition-all duration-300
+            ease-in-out opacity-0 -z-10
+        `}>
+    </div>
+</header>
+
+<script>
+    const listItem = document.querySelectorAll("#main-header a")
+    const backdropMenu = document.querySelector("#backdrop-menu") as HTMLElement
+
+    listItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect()
+            backdropMenu.style.setProperty("--left", `${left}px`)
+            backdropMenu.style.setProperty("--top", `${top}px`)
+            backdropMenu.style.setProperty("--width", `${width}px`)
+            backdropMenu.style.setProperty("--height", `${height}px`)
+            backdropMenu.style.opacity = "1"
+            backdropMenu.style.visibility = "visible"
+        })
+
+        item.addEventListener("mouseleave", () => {
+            backdropMenu.style.opacity = "0"
+            backdropMenu.style.visibility = "hidden"
+        })
+    })
+</script>
+
+<style>
+    nav {
+        box-shadow: 0 0 10px #050505;
+    }
+    a {
+        padding: 3px 7px;
+    }
+    @media (min-width: 768px) {
+        a { 
+            display: inline-block;
+            padding: 5px 20px;
+            transition: all .5s;
+            border-radius: 2px;
+        }
+    }
+</style>
