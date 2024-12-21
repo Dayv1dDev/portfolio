@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
+import Header from '../components/sections/Header.astro'
+import Footer from '../components/sections/Footer.astro'
 import '@fontsource-variable/inter';
 interface Props {
 	title: string
@@ -20,11 +20,8 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body 
-		class="
-			-z-10 h-full w-full items-center bg-fixed
-			[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]
-		">
+	<body class="">
+		<div class="fixed inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#63e_100%)]"></div>
 		<Header />
 		<slot />
 		<Footer />
