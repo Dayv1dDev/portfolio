@@ -2,50 +2,71 @@
 import Badge from '../components/Badge.astro'
 import Button from '../components/Button.astro'
 import EmailIcon from '../components/icons/EmailIcon.astro'
+import Experience from '../components/sections/Experience.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 import Layout from '../layouts/Layout.astro'
 import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
-import Projects from '../components/Projects.astro'
+import Projects from '../components/sections/Projects.astro'
 import Section from '../components/Section.astro'
-import SocialLinks from '../components/SocialLinks.astro'
+import SocialButton from '../components/SocialButton.astro'
+import Stack from '../components/sections/Stack.astro'
 ---
 
 <Layout 
-	title="David Moreno Cámara - Web Developer and Programmer"
+	title="David Moreno Cámara - Front-End Developer and Programmer"
 	description="Web Developer. Very responsible, especialized in making solutions and creating unique websites."
 >
 	<main class="px-2">
+		<!-- HERO -->
 		<Section class="pt-40 pb-52">
 			<h1 class="md:text-xl text-lg font-bold">
 				Hello! I am
 			</h1>
-			<h1 class="flex flex-row pb-3 md:text-4xl text-2xl font-bold gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-[#eee]">
-				David Moreno Cámara <a class="flex justify-center items-center ml-2 mt-1.5" href="https://www.linkedin.com/in/Dayv1d" rel="noopener" target="_blank"><Badge>Available to work</Badge></a>
+			<h1 class="flex flex-row place-items-center pb-3 md:text-4xl sm:text-3xl text-2xl leading-none font-bold gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-[#eee]">
+				David Moreno Cámara <a class="flex place-items-center sm:ml-2 sm:mt-1.5" href="https://www.linkedin.com/in/Dayv1d" rel="noopener" target="_blank"><Badge>Available to work</Badge></a>
 			</h1>
-			<h2 class="lg:text-xl md:text-lg sm:text-base text-sm text-pretty max-w-2xl mb-5">
-				I work as <span class="text-blue-400">Front-end Developer</span>, <span class="text-indigo-400">Programmer</span> and <span class="text-purple-300">Web Designer</span>. From Balearic Islands, Spain. Filled with the <strong>enthusiasm</strong> to reach new projects and challenges.
+			<h2 class="lg:text-xl md:text-lg sm:text-base text-sm text-wrap max-w-2xl mb-5">
+				I work as <span class="text-blue-400 font-semibold">Front-end Developer</span>, <span class="text-indigo-400 font-semibold">Programmer</span> and <span class="text-purple-300 font-semibold">Web Designer</span>. From Balearic Islands, Spain. Filled with the <strong>enthusiasm</strong> to reach new projects and challenges.
 			</h2>
 			<div class="flex flex-row flex-wrap md:gap-x-4 gap-x-3">
 				<Button class="md:mr-1 mr-0 md:text-sm text-xs" href="">Download CV</Button>
-				<SocialLinks link="https://github.com/Dayv1dDev">
+				<SocialButton link="https://github.com/Dayv1dDev">
 					<GithubIcon class="md:size-5 size-4" />
-				</SocialLinks>
-				<SocialLinks link="https://www.linkedin.com/in/Dayv1d">
+				</SocialButton>
+				<SocialButton link="https://www.linkedin.com/in/Dayv1d">
 					<LinkedInIcon class="md:size-5 size-4" />
-				</SocialLinks>
-				<SocialLinks 
+				</SocialButton>
+				<SocialButton 
 					class="flex flex-row gap-x-1 md:text-sm text-xs" 
 					link="mailto:davidmorecam@gmail.com"
 				>
 					<EmailIcon class="md:size-5 size-4" />
-					Contact me
-				</SocialLinks>
+					<span class="sm:inline hidden">Contact me</span>
+				</SocialButton>
 			</div>
 		</Section>
-		
-		<Section id="projects" class="mb-12">
-			<h2 class="text-2xl font-semibold mb-4">Projects</h2>
+		<!-- EXPERIENCE -->
+		<Section title="Experience" id="experience" class="mb-24">
+			<Experience />
+		</Section>
+		<!-- PROJECTS -->
+		<Section title="Projects" id="projects" class="mb-12">
 			<Projects />
+		</Section>
+
+		<!-- STACK -->
+		<Section title="Stack">
+			<Stack />
+	    </Section>
+
+		<!-- ABOUT -->
+		<Section title="About me" id="about">
+			
+		</Section>
+
+		<!-- CONTACT -->
+		<Section title="Contact" id="contact">
+
 		</Section>
 	</main>
 </Layout>
