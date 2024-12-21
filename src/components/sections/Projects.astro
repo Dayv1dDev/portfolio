@@ -1,0 +1,94 @@
+---
+import CSSIcon from "../icons/CSSIcon.astro"
+import GithubIcon from "../icons/GithubIcon.astro"
+import HTMLIcon from "../icons/HTMLIcon.astro"
+import JSIcon from "../icons/JSIcon.astro"
+import LinkIcon from "../icons/LinkIcon.astro"
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        icon: HTMLIcon,
+    },
+    CSS: {
+        name: "CSS",
+        icon: CSSIcon,
+    },
+    JS: {
+        name: "JavaScript",
+        icon: JSIcon,
+    },
+    REACT: {
+        name: "React",
+        // icon: ReactIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        // icon: TailwindIcon,
+    },
+}
+const PROJECTS = [
+    {
+        title: 'BASO Project',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex blanditiis fuga, tenetur qui quod sed explicabo praesentium expedita eius error provident modi pariatur, adipisci mollitia cum natus ratione! Ducimus, suscipit!',
+        link: 'https://baso-project.github.io',
+        github: 'https://github.com/BASO-Project/baso-project.github.io',
+        picture: '../../public/projects/baso-project.webp',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+    },
+    {
+        title: 'Arkaday',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex blanditiis fuga, tenetur qui quod sed explicabo praesentium expedita eius error provident modi pariatur, adipisci mollitia cum natus ratione! Ducimus, suscipit!',
+        link: 'https://basa2.github.io',
+        github: 'https://github.com/Dayv1dDev/Arkaday',
+        picture: '../../public/projects/baso-project.webp',
+        tags: [TAGS.JS],
+    },
+]
+---
+
+<div class="flex flex-col gap-y-10">
+{
+    PROJECTS.map(({ title, description, picture, tags, github, link }) => (
+        <article class="flex flex-col rounded-lg pb-4 group">
+            <div class="relative aspect-video rounded-lg overflow-hidden">
+                <img class="w-[740px] aspect-video object-cover rounded-lg group-hover:scale-110 transition-transform duration-500" src={picture} alt={`Screenshot from ${title}`}>
+            </div>
+            <div class="mx-4">
+                <div class="flex gap-x-4 items-center mt-4">
+                    <h3 class="text-xl font-medium text-purple-300">{title}</h3>
+                    <div class="flex gap-x-3 place-items-center">
+                        <a href={github} target="_blank" rel="noopener noreferrer">
+                            <GithubIcon class="size-[18px]" />
+                        </a>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                            <LinkIcon class="size-4" />
+                        </a>
+                    </div>
+                </div>
+                <p class="mb-3 md:text-base text-sm text-pretty text-gray-200">{description}</p>
+                <ul class="flex flex-row gap-x-2">
+                    {tags.map(tag =>(
+                        <li class={`inline-flex gap-x-[6px] rounded-full text-xs px-3 py-1.5 font-semibold`}>
+                            <tag.icon class="size-4" />
+                            <span>
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </article>
+    ))
+}
+</div>
+
+<style>
+    article {
+        background-color: hsl(0 0% 4%);
+    }
+
+    li {
+        background-color: hsl(0 0% 8%);
+    }
+</style>
