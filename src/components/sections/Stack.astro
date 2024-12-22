@@ -1,3 +1,140 @@
 ---
+import AWSIcon from "../icons/AWSIcon.astro"
+import FigmaIcon from "../icons/FigmaIcon.astro"
+import AstroIcon from "../icons/AstroIcon.astro"
+import DjangoIcon from "../icons/DjangoIcon.astro"
+import MySQLIcon from "../icons/MySQLIcon.astro"
+import GitIcon from "../icons/GitIcon.astro"
+import JSIcon from "../icons/JSIcon.astro"
+import ReactIcon from "../icons/ReactIcon.astro"
+import PythonIcon from "../icons/PythonIcon.astro"
+import TailwindIcon from "../icons/TailwindIcon.astro"
+import GithubIcon from "../icons/GithubIcon.astro"
 
+const TAGS = {
+    JS: {
+        name: "JavaScript",
+        icon: JSIcon,
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        isLearning: false,
+    },
+    ASTRO: {
+        name: "Astro",
+        icon: AstroIcon,
+        link: "https://astro.build/",
+        isLearning: false,
+    },
+    REACT: {
+        name: "React",
+        icon: ReactIcon,
+        link: "https://reactjs.org/",
+        isLearning: true,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        icon: TailwindIcon,
+        link: "https://tailwindcss.com/",
+        isLearning: false,
+    },
+    MYSQL: {
+        name: "MySQL",
+        icon: MySQLIcon,
+        link: "https://www.mysql.com/",
+        isLearning: false,
+    },
+    PYTHON: {
+        name: "Python",
+        icon: PythonIcon,
+        link: "https://www.python.org/",
+        isLearning: true,
+    },
+    DJANGO: {
+        name: "Django",
+        icon: DjangoIcon,
+        link: "https://www.djangoproject.com/",
+        isLearning: true,
+    },
+    GITHUB: {
+        name: "Github",
+        icon: GithubIcon,
+        link: "https://github.com/",
+        isLearning: false,
+    },
+    GIT: {
+        name: "Git",
+        icon: GitIcon,
+        link: "https://git-scm.com/",
+        isLearning: false,
+    },
+    FIGMA: {
+        name: "Figma",
+        icon: FigmaIcon,
+        link: "https://www.figma.com/",
+        isLearning: false,
+    },
+    AWS: {
+        name: "AWS",
+        icon: AWSIcon,
+        link: "https://aws.amazon.com/",
+        isLearning: true,
+    },
+}
+
+const STACKS = [
+    {
+        title: "Front-end",
+        description: "Languages, frameworks and libraries that I use to create the user interface in my websites.",
+        tags: [TAGS.JS, TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+    },
+    {
+        title: "Back-end",
+        description: "Languages, databases and frameworks that I use in the server side of my websites.",
+        tags: [TAGS.MYSQL, TAGS.PYTHON, TAGS.DJANGO],
+    },
+    {
+        title: "Other",
+        description: "Tools that I use to make my work easier, more efficient and more professional.",
+        tags: [TAGS.GITHUB, TAGS.GIT, TAGS.AWS, TAGS.FIGMA],
+    },
+]
 ---
+
+<div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-3 gap-y-3 mx-1 md:mx-0">
+    {
+        STACKS.map(({ title, description, tags }) => (
+            <article class="w-full rounded-lg p-4">
+                <h3 class="text-xl text-purple-300 font-medium mb-1">{title}</h3>
+                <p class="text-base text-wrap text-gray-200">{description}</p>
+                <div class="grid md:grid-cols-1 min-[450px]:grid-cols-2 grid-cols-1 gap-2 mt-4">
+                {tags.map(tag =>(
+                    <a href={tag.link} class={`inline-flex items-center justify-between p-3 rounded-lg duration-150 text-xs font-semibold`} target="_blank" rel="noopener noreferrer">
+                        <div class="flex gap-x-[6px]">
+                            <tag.icon class="size-6" />
+                            <span class="text-base">
+                                {tag.name}
+                            </span>
+                        </div>
+                        {tag.isLearning && (
+                        <span class="text-xs bg-blue-200 text-blue-700 rounded-full px-2.5 py-[2px]">Learning</span>
+                        )}
+                    </a>
+                ))}
+                </div>
+            </article>
+        ))
+    }
+</div>
+
+<style>
+    article {
+        background-color: hsl(0 0% 4%);
+    }
+
+    a {
+        background-color: hsl(0 0% 8%);
+    }
+
+    a:hover {
+        background-color: hsl(0 0% 12%);
+    }
+</style>
