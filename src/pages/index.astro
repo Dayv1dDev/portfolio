@@ -29,7 +29,7 @@ import Stack from '@/components/sections/Stack.astro'
 				I work as <span class="text-blue-400 font-semibold">Front-end Developer</span>, <span class="text-indigo-400 font-semibold">Programmer</span> and <span class="text-purple-300 font-semibold">Web Designer</span>. From Balearic Islands, Spain. Filled with the <strong>enthusiasm</strong> to reach new projects and challenges.
 			</h2>
 			<div class="flex flex-row flex-wrap md:gap-x-4 gap-x-3">
-				<Button class="md:mr-1 mr-0 md:text-sm text-xs" href="">Download CV</Button>
+				<Button class="md:mr-1 mr-0 md:text-sm text-xs" download="cv.pdf" href="/cv/cv.pdf">Download CV</Button>
 				<SocialButton link="https://github.com/Dayv1dDev">
 					<GithubIcon class="md:size-5 size-4" />
 				</SocialButton>
@@ -46,26 +46,41 @@ import Stack from '@/components/sections/Stack.astro'
 			</div>
 		</Section>
 		<!-- EXPERIENCE -->
-		<Section title="Experience" id="experience" class="mb-24">
+		<Section id="experience" class="mb-20">
+			<h2 class="flex items-center gap-x-2 sm:text-3xl text-2xl font-semibold mb-4">
+				<svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /></svg>
+				<span>Experience</span>
+			</h2>
 			<Experience />
 		</Section>
 		<!-- PROJECTS -->
-		<Section title="Projects" id="projects" class="mb-12">
+		<Section id="projects" class="mb-20">
+			<h2 class="flex items-center gap-x-2 sm:text-3xl text-2xl font-semibold mb-4">
+				<svg class="size-7" xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M15 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M6 15v-1a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v1" /><path d="M12 9l0 3" /></svg>
+				<span>Projects</span>
+			</h2>
 			<Projects />
 		</Section>
 
 		<!-- STACK -->
-		<Section title="Stack">
+		<Section class="mb-20">
+			<h2 class="flex items-center gap-x-2 sm:text-3xl text-2xl font-semibold mb-4">
+				<svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+				<span>Stack</span>
+			</h2>
 			<Stack />
 	    </Section>
 
 		<!-- ABOUT -->
-		<Section title="About me" id="about">
-			
+		<Section id="about">
+			<h2 class="flex items-center gap-x-2 sm:text-3xl text-2xl font-semibold mb-4">
+				<svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4" /><path d="M15 19l2 2l4 -4" /></svg>
+				<span>About me</span>
+			</h2>
 		</Section>
 
 		<!-- CONTACT -->
-		<Section title="Contact" id="contact">
+		<Section id="contact">
 
 		</Section>
 	</main>
