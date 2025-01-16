@@ -7,6 +7,7 @@ import GithubIcon from "../icons/GithubIcon.astro"
 import GitIcon from "../icons/GitIcon.astro"
 import JSIcon from "../icons/JSIcon.astro"
 import MySQLIcon from "../icons/MySQLIcon.astro"
+import PHPIcon from "../icons/PHPIcon.astro"
 import PythonIcon from "../icons/PythonIcon.astro"
 import ReactIcon from "../icons/ReactIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
@@ -40,6 +41,12 @@ const TAGS = {
         name: "MySQL",
         icon: MySQLIcon,
         link: "https://www.mysql.com/",
+        isLearning: false,
+    },
+    PHP: {
+        name: "PHP",
+        icon: PHPIcon,
+        link: "https://www.php.net/",
         isLearning: false,
     },
     PYTHON: {
@@ -84,12 +91,12 @@ const STACKS = [
     {
         title: "Front-end",
         description: "Languages, frameworks and libraries that I use to create the user interface in my websites.",
-        tags: [TAGS.JS, TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+        tags: [TAGS.JS, TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
     },
     {
         title: "Back-end",
-        description: "Languages, databases and frameworks that I use in the server side of my websites.",
-        tags: [TAGS.MYSQL, TAGS.PYTHON, TAGS.DJANGO],
+        description: "Databases, languages and frameworks that I use in the server side of my websites.",
+        tags: [TAGS.MYSQL, TAGS.PHP, TAGS.PYTHON, TAGS.DJANGO],
     },
     {
         title: "Software",
