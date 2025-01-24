@@ -1,0 +1,27 @@
+---
+import EducationItem from "../EducationItem.astro"
+
+const EDUCATION = [
+    {   
+        date: "September 2021 - June 2023",
+        title: "Technological Baccalaureate Degree",
+        institution: "IES Binissalem",
+        location: "Mallorca, Spain",
+        description: "Where I developed myself as a dedicated person, studying and programming at the same time to improve my skills and the way I was learning many diferent areas, including both, the code and the high school. Here was where I learnt a lot with BASO Project, when we did the CanSat Project my team and me inmersed into a real productive group and we developt/built our upcoming challenges."
+    },
+    {   
+        date: "September 2023 - Present",
+        title: "Higher Technician in Web Development",
+        institution: "Ilerna Online",
+        description: "Since I started here, my motivation has increased due to the ambition I have to start working and learning from my future teams. Through this grade, I learnt many technologies by myself in some other platforms that provide courses, which made me improve in terms of code on: best practices, programming languages, frameworks... During the grade I learnt some other technologies such as PHP or MySQL."
+    }
+]
+---
+
+<ul class="relative border-s border-gray-200">
+    {
+        EDUCATION.map(education => (
+            <EducationItem {...education} />
+        )) 
+    }
+</ul>
