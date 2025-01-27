@@ -1,9 +1,12 @@
 ---
+import AstroIcon from "../icons/AstroIcon.astro"
 import CSSIcon from "../icons/CSSIcon.astro"
 import GithubIcon from "../icons/GithubIcon.astro"
 import HTMLIcon from "../icons/HTMLIcon.astro"
 import JSIcon from "../icons/JSIcon.astro"
+import NetlifyIcon from "../icons/NetlifyIcon.astro"
 import LinkIcon from "../icons/LinkIcon.astro"
+import TailwindIcon from "../icons/TailwindIcon.astro"
 
 const TAGS = {
     HTML: {
@@ -18,14 +21,18 @@ const TAGS = {
         name: "JavaScript",
         icon: JSIcon,
     },
-    REACT: {
-        name: "React",
-        // icon: ReactIcon,
+    NETLIFY: {
+        name: "Netlify",
+        icon: NetlifyIcon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        // icon: TailwindIcon,
+        icon: TailwindIcon,
     },
+    ASTRO: {
+        name: "Astro",
+        icon: AstroIcon,
+    }
 }
 const PROJECTS = [
     {
@@ -37,12 +44,12 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
     {
-        title: 'Arkaday',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex blanditiis fuga, tenetur qui quod sed explicabo praesentium expedita eius error provident modi pariatur, adipisci mollitia cum natus ratione! Ducimus, suscipit!',
-        link: 'https://basa2.github.io',
-        github: 'https://github.com/Dayv1dDev/Arkaday',
+        title: 'Portfolio',
+        description: 'Created with Astro, a static site JavaScript framework. I used Tailwind CSS to style it and I also used Netlify to deploy it. I learnt a lot about Astro and Tailwind CSS, since they were new technologies for me. It has been my first portfolio and I consider this frameworks I used are very useful to have learnt for my near future.',
+        link: 'https://dayv1d-portfolio.netlify.app',
+        github: 'https://github.com/Dayv1dDev/portfolio',
         picture: '/projects/baso-project.webp',
-        tags: [TAGS.JS],
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.NETLIFY],
     },
 ]
 ---
