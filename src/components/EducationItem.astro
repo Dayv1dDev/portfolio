@@ -20,9 +20,9 @@ const { date, title, institution, location, description } = Astro.props
         <h4 class="text-purple-300 sm:text-lg text-base font-semibold">{institution}</h4>
         {
         location && (
-        <div class="flex gap-x-[2px] items-center">
+        <div class="flex gap-x-[2px] items-center text-blue-400/90">
             <LocationIcon class="size-4" />
-            <span class="text-gray-200 text-sm">{location}</span>
+            <span class="text-sm">{location}</span>
         </div>
         )
         }
