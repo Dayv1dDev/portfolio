@@ -1,16 +1,17 @@
 ---
 import AstroIcon from "../icons/AstroIcon.astro"
-import AWSIcon from "../icons/AWSIcon.astro"
-import DjangoIcon from "../icons/DjangoIcon.astro"
+import ExpressJSIcon from "../icons/ExpressJSIcon.astro"
 import FigmaIcon from "../icons/FigmaIcon.astro"
 import GithubIcon from "../icons/GithubIcon.astro"
 import GitIcon from "../icons/GitIcon.astro"
 import JSIcon from "../icons/JSIcon.astro"
 import MySQLIcon from "../icons/MySQLIcon.astro"
+import NextJSIcon from "../icons/NextJSIcon.astro"
+import NodeJSIcon from "../icons/NodeJSIcon.astro"
 import PHPIcon from "../icons/PHPIcon.astro"
-import PythonIcon from "../icons/PythonIcon.astro"
 import ReactIcon from "../icons/ReactIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
+import TSIcon from "../icons/TSIcon.astro"
 
 const TAGS = {
     JS: {
@@ -26,16 +27,28 @@ const TAGS = {
         isLearning: false,
     },
     REACT: {
-        name: "React",
+        name: "React.js",
         icon: ReactIcon,
         link: "https://reactjs.org/",
-        isLearning: true,
+        isLearning: false,
     },
     TAILWIND: {
         name: "Tailwind CSS",
         icon: TailwindIcon,
         link: "https://tailwindcss.com/",
         isLearning: false,
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        icon: TSIcon,
+        link: "https://www.typescriptlang.org/",
+        isLearning: true,
+    },
+    NEXTJS: {
+        name: "Next.js",
+        icon: NextJSIcon,
+        link: "https://nextjs.org/",
+        isLearning: true,
     },
     MYSQL: {
         name: "MySQL",
@@ -49,17 +62,17 @@ const TAGS = {
         link: "https://www.php.net/",
         isLearning: false,
     },
-    PYTHON: {
-        name: "Python",
-        icon: PythonIcon,
-        link: "https://www.python.org/",
-        isLearning: true,
+    NODEJS: {
+        name: "Node.js",
+        icon: NodeJSIcon,
+        link: "https://nodejs.org/",
+        isLearning: false,
     },
-    DJANGO: {
-        name: "Django",
-        icon: DjangoIcon,
-        link: "https://www.djangoproject.com/",
-        isLearning: true,
+    EXPRESSJS: {
+        name: "Express.js",
+        icon: ExpressJSIcon,
+        link: "https://expressjs.com/",
+        isLearning: false,
     },
     GITHUB: {
         name: "Github",
@@ -78,41 +91,35 @@ const TAGS = {
         icon: FigmaIcon,
         link: "https://www.figma.com/",
         isLearning: false,
-    },
-    AWS: {
-        name: "AWS",
-        icon: AWSIcon,
-        link: "https://aws.amazon.com/",
-        isLearning: true,
-    },
+    }
 }
 
 const STACKS = [
     {
         title: "Front-end",
         description: "Languages, frameworks and libraries that I use to create the user interface in my websites.",
-        tags: [TAGS.JS, TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
+        tags: [TAGS.JS, TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NEXTJS],
     },
     {
         title: "Back-end",
         description: "Databases, languages and frameworks that I use in the server side of my websites.",
-        tags: [TAGS.MYSQL, TAGS.PHP, TAGS.PYTHON, TAGS.DJANGO],
+        tags: [TAGS.MYSQL, TAGS.PHP, TAGS.NODEJS, TAGS.EXPRESSJS],
     },
     {
         title: "Software",
         description: "Tools that I use to make my work easier, more efficient and more professional.",
-        tags: [TAGS.GITHUB, TAGS.GIT, TAGS.AWS, TAGS.FIGMA],
+        tags: [TAGS.GITHUB, TAGS.GIT, TAGS.FIGMA],
     },
 ]
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-3 gap-y-3 mx-1 md:mx-0">
+<div id="stack" class="grid grid-cols-1 gap-x-3 gap-y-3 mx-1 md:mx-0">
     {
         STACKS.map(({ title, description, tags }) => (
             <article class="w-full rounded-lg p-4">
                 <h3 class="md:text-xl text-lg text-purple-300 font-medium mb-1">{title}</h3>
                 <p class="md:text-base text-sm text-wrap text-gray-200">{description}</p>
-                <div class="grid md:grid-cols-1 min-[450px]:grid-cols-2 grid-cols-1 gap-2 mt-4">
+                <div class="grid grid-cols-1 gap-2 mt-4">
                 {tags.map(tag =>(
                     <a href={tag.link} class={`inline-flex items-center justify-between p-3 rounded-lg duration-150 text-xs font-semibold`} target="_blank" rel="noopener noreferrer">
                         <div class="flex gap-x-[6px]">
@@ -135,6 +142,20 @@ const STACKS = [
 <style>
     article {
         background-color: hsl(0 0% 4%);
+    }
+    
+    @media (min-width: 510px) {
+        article:first-child > div {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        article:first-child {
+            grid-column: span 2;
+        }   
+
+        #stack {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 
     a {
