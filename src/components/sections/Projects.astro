@@ -6,7 +6,11 @@ import HTMLIcon from "../icons/HTMLIcon.astro"
 import JSIcon from "../icons/JSIcon.astro"
 import NetlifyIcon from "../icons/NetlifyIcon.astro"
 import LinkIcon from "../icons/LinkIcon.astro"
+import ReactIcon from "../icons/ReactIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
+import NodeJSIcon from "../icons/NodeJSIcon.astro"
+import MySQLIcon from "../icons/MySQLIcon.astro"
+import ExpressJSIcon from "../icons/ExpressJSIcon.astro"
 
 const TAGS = {
     HTML: {
@@ -32,9 +36,32 @@ const TAGS = {
     ASTRO: {
         name: "Astro",
         icon: AstroIcon,
-    }
+    },
+    REACT: {
+        name: "React.js",
+        icon: ReactIcon,
+    },
+    NODEJS: {
+        name: "Node.js",
+        icon: NodeJSIcon,
+    },
+    EXPRESSJS: {
+        name: "Express.js",
+        icon: ExpressJSIcon,
+    },
+    MYSQL: {
+        name: "MySQL",
+        icon: MySQLIcon,
+    },
 }
 const PROJECTS = [
+    {
+        title: 'escReact',
+        description: 'DAW final degree project in which I developed a page where users can register, log in and play/practice in two different tests: one for typing and one for reaction time. For each of the tests there are a leaderboard where the users can improve their latests scores. It is created entirely with JavaScript, both for Back-end and Front-end technologies. It is not yet published, but I will deploy it to production soon.',
+        github: 'https://github.com/Dayv1dDev/escReact',
+        picture: '/projects/escReact.jpeg',
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODEJS, TAGS.EXPRESSJS, TAGS.MYSQL],
+    },
     {
         title: 'BASO Project',
         description: 'Landing static page created for my high school technology team. I used HTML, CSS and JavaScript to make it and I also used GitHub Pages to deploy it to production. I learnt a lot about web development and I also improved my programming skills since it has been my first real project deployed to production.',
@@ -74,7 +101,7 @@ const PROJECTS = [
                     </div>
                 </div>
                 <p class="mb-3 md:text-base text-sm text-pretty text-gray-200">{description}</p>
-                <ul class="flex flex-row gap-x-2">
+                <ul class="flex flex-row flex-wrap gap-x-2 gap-y-1">
                     {tags.map(tag =>(
                         <li class={`inline-flex gap-x-[6px] rounded-full text-xs px-3 py-1.5 font-semibold`}>
                             <tag.icon class="size-4" />
