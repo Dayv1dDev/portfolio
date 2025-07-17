@@ -95,9 +95,11 @@ const PROJECTS = [
                         <a href={github} target="_blank" rel="noopener noreferrer">
                             <GithubIcon class="size-[18px]" />
                         </a>
+                        {link &&
                         <a href={link} target="_blank" rel="noopener noreferrer">
                             <LinkIcon class="size-4" />
-                        </a>
+                        </a> 
+                        }
                     </div>
                 </div>
                 <p class="mb-3 md:text-base text-sm text-pretty text-gray-200">{description}</p>
